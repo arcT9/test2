@@ -1,0 +1,61 @@
+<html>
+<head>
+   <style>
+body {
+  background-color: hsl(89, 43%, 51%);
+}
+</style>
+<style>
+   #SearchBar{
+             margin-left: 10%;
+             width: 6%;
+            }
+            #labels{
+                margin-left: 19%;
+            }
+</style>
+</head>
+<body>
+   <div>
+<h2 style="background-color:LightGray;font-family:tahoma;text-align: center;">Assignment 2</h2>
+<h2 style="background-color:LightGray;font-family:tahoma;text-align: center;">Archana Turaga, ID: 1001859014</h2>
+<h2 style="background-color:LightGray;font-family:tahoma;text-align: center;">Cloud Computing (ADB)</h2>
+   </div>
+   
+<div>
+<p>
+    <form action="/largest5" method="post">
+        earthquakes of mag greater than 5 <input type="submit" value="Search">
+    </form>
+</p>
+   </div>   
+   <div>
+<p>
+ <form action="/rangeof" method="post">
+     earthquakes between mag 2.0 and 2.5 <input type="submit" value="Search">
+    </form>
+</p>
+   </div>
+<div>
+<p>
+ <form action="/latlong" method="post">
+     Locations of the Earthquakes recorded within 50KM from "18KM East Of Point Possession, Alaska" <input type="submit" value="Search">
+    </form>
+</p>
+</div>
+<div>
+<p>
+ <form action="/dayornight" method="post">
+     Do big earthquakes (greater then 4.0 mag) occur more often at night? <input type="submit" value="Search">
+    </form>
+</p>
+</div>
+<div>
+<p>
+ <form action="/cluster" method="post">
+     Earthquake CLustering <input type="submit" value="Search">
+    </form>
+</p>
+</div>
+</body>
+</html>
