@@ -1,0 +1,15 @@
+Flask>=1.0,<=1.1.2
+pandas==1.2.4
+numpy>=1.16.5
+gunicorn==19.7.1
+prometheus-client
+ibmcloudenv
+livereload
+Flask-WTF
+flask-uploads
+tinydb
+flask-bootstrap
+flask-nav
+werkzeug==0.16.1
+sqlalchemy
+pyodbc
