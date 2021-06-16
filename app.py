@@ -12,14 +12,18 @@ username = 'archanat'
 password = 'Dheeraj92'
 
 #sql query to find earthquakes greater then mag 5
-@app.route('/largest5', methods=['POST'])
+@app.route('/five', methods=['POST'])
 def searchmag():
 	cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};PORT=1433;SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 	cursor = cnxn.cursor()
-	cursor.execute("SELECT * FROM [dbo].[all_month] where [dbo].[all_month].[mag] > '5' ")
+	num = request.form.get("SearchBar")
+	cursor.execute("SELECT * FROM [dbo].[qi] WHERE [dbo].[qi].[time2] BETWEEN '7000' AND '8010' AND [dbo].[qi].[net] = 'ci' ")
 	row = cursor.fetchall()
 	count = len(row)
-	return render_template('givemag.html', r=row, c=count)
+	cursor.execute("SELECT * FROM [dbo].[qi] WHERE [dbo].[qi].[mag] > '5' ")
+	cursor.execute("SELECT TOP 3 * FROM [dbo].[qi] WHERE [dbo].[qi].[mag] > '5' ")
+	rows = cursor.fetchall()
+	return render_template('givemag.html', r=rows, c=count)
 #finding places with earthquakes between mag 2.0 and 2.5
 @app.route('/rangeof', methods=['POST'])
 def searchrange():
