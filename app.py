@@ -23,7 +23,7 @@ def searchmag():
 	cursor.execute("SELECT * FROM [dbo].[qi] WHERE [dbo].[qi].[mag] > '5' ")
 	cursor.execute("SELECT TOP 3 * FROM [dbo].[qi] WHERE [dbo].[qi].[mag] > '5' ")
 	rows = cursor.fetchall()
-	return render_template('givemag.html', r=rows, c=count)
+	return render_template('five.html', r=rows, c=count)
 #finding places with earthquakes between mag 2.0 and 2.5
 @app.route('/rangeof', methods=['POST'])
 def searchrange():
