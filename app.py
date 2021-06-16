@@ -24,15 +24,14 @@ def searchmag():
 	cursor.execute("SELECT TOP 3 * FROM [dbo].[qi] WHERE [dbo].[qi].[mag] > '5' ")
 	rows = cursor.fetchall()
 	return render_template('five.html', r=rows, c=count)
-#finding places with earthquakes between mag 2.0 and 2.5
-@app.route('/rangeof', methods=['POST'])
+@app.route('/six', methods=['POST'])
 def searchrange():
 	cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};PORT=1433;SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 	cursor = cnxn.cursor()
-	cursor.execute("SELECT * FROM [dbo].[all_month] WHERE [dbo].[all_month].[mag] BETWEEN '2.0' AND '2.5' ")
+	cursor.execute("SELECT * FROM [dbo].[qi] WHERE [dbo].[qi].[latitude] BETWEEN '33.1348333' AND '44.4863333' AND [dbo].[qi].[longitude] BETWEEN '-117.6758333' AND '-64.8555' AND [dbo].[qi].[mag] > '4' ")
 	row = cursor.fetchall()
 	count = len(row)
-	return render_template('giverange.html', r=row, c=count)
+	return render_template('six.html', r=row, c=count)
 #https://www.geodatasource.com/distance-calculator i used this site to calculate the lat long distances; finding range of places fitting crieteria
 @app.route('/latlong', methods=['POST'])
 def searchlatlong():
