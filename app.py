@@ -11,7 +11,7 @@ database = 'archana'
 username = 'archanat'
 password = 'Dheeraj92'
 
-#sql query to find earthquakes greater then mag 5
+#sql query 
 @app.route('/five', methods=['POST'])
 def searchmag():
 	cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};PORT=1433;SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
