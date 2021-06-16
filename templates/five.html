@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+body {
+  background-color: hsl(89, 43%, 51%);
+}
+    </style>
+    <h1 style="text-align: center;background-color:LightGray;font-family:tahoma;">The Results</h1>  
+    <h1 style="text-align: center;background-color:LightGray;font-family:tahoma;">The total number of earthquakes in that region is {{c}}</h1>
+</head>
+<body>
+    {% for i in r %}
+     <b>Mag: {{i["mag"]}}</b> <b>Time: {{i["time"]}}</b> <b>Place: {{i["place"]}}</b> <b>time2: {{i["time2"]}}</b> <b>Lat: {{i["latitude"]}}</b> <b>Long: {{i["longitude"]}}</b><br>
+    {% endfor %}
+    </body>
+</html>
