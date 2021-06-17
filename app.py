@@ -12,7 +12,7 @@ username = 'archanat'
 password = 'Dheeraj92'
 
 #sql query 
-@app.route('/five', methods=['POST'])
+@app.route('/five', methods=["POST", "GET"])
 def searchmag():
 	cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};PORT=1433;SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 	cursor = cnxn.cursor()
