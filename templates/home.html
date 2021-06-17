@@ -24,8 +24,13 @@ body {
    
 <div>
 <p>
-    <form action="/five" method="post">
-        The time2 range 7000 to 8010 in net ci details and largest 3 earthquakes <input type="submit" value="Search">
+    <form action="/five" method="POST", method="GET">
+       <h3> Enter your time2 range and net value below</h3>
+        <input type="text" name="t1" placeholder="Enter one time2 value"><br>
+        <input type="text" name="t2" placeholder="Enter 2nd time2 value"><br>
+        <input type="text" name="net" placeholder="Enter net value"><br>
+        <input type="submit" value="submit">
+    </form>
     </form>
 </p>
    </div>   
