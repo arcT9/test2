@@ -16,9 +16,9 @@ password = 'Dheeraj92'
 def searchmag():
 	cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};PORT=1433;SERVER='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
 	cursor = cnxn.cursor()
-	t1 = request.form.get(t1)
-	t2 = request.form.get(t2)
-	net = request.form.get(net)
+	t1 = request.form.get('t1')
+	t2 = request.form.get('t2')
+	net = request.form.get('net')
 	cursor.execute("SELECT * FROM [dbo].[qi] WHERE [dbo].[qi].[net] = net AND [dbo].[qi].[time2] BETWEEN t1 AND t2 ")
 	row = cursor.fetchall()
 	count = len(row)
